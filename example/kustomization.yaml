@@ -12,3 +12,9 @@ configMapGenerator:
   - name: example-chart-values
     files:
       - values.yaml=configs/example-chart-values.yaml
+  - name: example-chart-overlay-values
+    files:
+      - values.yaml=configs/example-chart-overlay-values.yaml
+
+patchesStrategicMerge:
+  - patch-release.yaml
