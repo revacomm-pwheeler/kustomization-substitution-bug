@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: example-config-map
 data:
-  problem: "string\\with\\backslashes and a substitution: ${example} and a literal $${<-- dollar sign}"
+  problem: "an example of a multi-line string \ string\\with\\backslashes and a\n
+    \    substitution: ${example} and a literal $${<-- dollar sign}"
