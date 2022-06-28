@@ -23,7 +23,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: chart
+      chart: './chart'
       sourceRef:
         kind: GitRepository
         name: kustomization-substitution-bug

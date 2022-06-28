@@ -5,6 +5,9 @@ resources:
   - namespace.yaml
   - resources.yaml
 
+configurations:
+  - kustomizeconfig.yaml
+
 configMapGenerator:
   - name: example-chart-values
     files:
