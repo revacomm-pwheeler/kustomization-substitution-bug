@@ -5,3 +5,5 @@ metadata:
 data:
   control: |
     This should work {{ .Values.config.test }}
+  test: |
+    This should also work, but it breaks {{ .Values.config.problem }}
