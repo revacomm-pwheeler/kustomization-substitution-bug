@@ -1,0 +1,26 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: kustomization-substitution-bug
+  namespace: default
+spec:
+  interval: 1m0s
+  url: https://github.com/revacomm-pwheeler/kustomization-substitution-bug.git
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: root
+  namespace: default
+spec:
+  interval: 2m0s
+  sourceRef:
+    kind: GitRepository
+    name: kustomization-substitution-bug
+  path: ./example
+  prune: true
+  wait: true
+  timeout: 5m0s
+  postBuild:
+    substitute:
+      example: "this should work"

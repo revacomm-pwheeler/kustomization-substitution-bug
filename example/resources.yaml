@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-config-map
+data:
+  problem: "string\\with\\backslashes and a substitution: ${example} and a literal $${<-- dollar sign}"
