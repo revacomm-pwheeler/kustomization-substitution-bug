@@ -3,5 +3,14 @@ kind: ConfigMap
 metadata:
   name: example-config-map
 data:
-  problem: "an example of a multi-line string \ string\\with\\backslashes and a\n
+  problem: "an example of a multi-line string\\with\\backslashes and a\n
     \    substitution: ${example} and a literal $${<-- dollar sign}"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-config-map2
+data:
+  problem: |
+    an example of a block string\with\backslashes and a
+        substitution: ${example} and a literal $${<-- dollar sign}
