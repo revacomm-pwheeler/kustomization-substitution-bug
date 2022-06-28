@@ -14,3 +14,21 @@ data:
   problem: |
     an example of a block string\with\backslashes and a
         substitution: ${example} and a literal $${<-- dollar sign}
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: example-chart-release
+  namespace: example
+spec:
+  chart:
+    spec:
+      chart: chart
+      sourceRef:
+        kind: GitRepository
+        name: kustomization-substitution-bug
+        namespace: default
+  interval: 2m0s
+  valuesFrom:
+    - name: example-chart-values
+      kind: ConfigMap

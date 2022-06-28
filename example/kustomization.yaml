@@ -4,3 +4,8 @@ namespace: example
 resources:
   - namespace.yaml
   - resources.yaml
+
+configMapGenerator:
+  - name: example-chart-values
+    files:
+      - values.yaml=configs/example-chart-values.yaml

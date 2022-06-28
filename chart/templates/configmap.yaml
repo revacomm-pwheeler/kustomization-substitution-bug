@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nested-chart-config-map
+data:
+  control: {{ .Values.config.test }}
+  output: {{ .Values.config.problem }}

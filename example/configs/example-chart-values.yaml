@@ -1,0 +1,5 @@
+config:
+  test: foo-bar-baz
+  problem: |
+    an example of a block string\with\backslashes and a
+        substitution: ${example} and a literal $${<-- dollar sign}
