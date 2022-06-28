@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: nested-chart-config-map
 data:
-  control: {{ .Values.config.test }}
-  output: {{ .Values.config.problem }}
+  control: |
+    This should work {{ .Values.config.test }}
